@@ -125,3 +125,9 @@ map.on('style.load', function() {
   // let's hack the basemap style a bit
   // you can use map.getStyle() in the console to inspect the basemap layers
   map.setPaintProperty('water', 'fill-color', '#a4bee8')
+
+  // this sets up the geojson as a source in the map, which I can use to add visual layers
+ map.addSource('chinatown', {
+   type: 'geojson',
+   data: './data/china-town.geojson',
+ });
