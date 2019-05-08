@@ -5,8 +5,8 @@ html, body {
 }
 
 #mapContainer {
-  height: 500px;
-  width: 500px;
+  height: 800px;
+  width: 800px;
   background: lightgray;
   margin: 0 auto;
 }
