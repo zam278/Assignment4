@@ -105,3 +105,22 @@ var neighborHoodLookup = {
   'upper-east-side': [-73.9666769, 40.7682912],
   'east-harlem': [-73.938843, 40.805212],
 }
+
+// we can't add our own sources and layers until the base style is finished loading
+map.on('style.load', function() {
+  // add a button click listener that will control the map
+  // we have 4 buttons, but can listen for clicks on any of them with just one listener
+  $('.flyto').on('click', function(e) {
+    // pull out the data attribute for the neighborhood using query
+    var neighborhood = $(e.target).data('neighborhood');
+
+    // this is a useful notation for looking up a key in an object using a variable
+    var center = neighborHoodLookup[neighborhood];
+
+    // fly to the neighborhood's center point
+    map.flyTo({center: center, zoom: 14});
+  });
+
+  // let's hack the basemap style a bit
+  // you can use map.getStyle() in the console to inspect the basemap layers
+  map.setPaintProperty('water', 'fill-color', '#a4bee8')
