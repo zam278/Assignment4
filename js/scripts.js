@@ -127,7 +127,8 @@ map.on('style.load', function() {
   map.setPaintProperty('water', 'fill-color', '#a4bee8')
 
   // this sets up the geojson as a source in the map, which I can use to add visual layers
- map.addSource('chinatown', {
-   type: 'geojson',
-   data: './data/china-town.geojson',
- });
+  // this sets up the geojson as a source in the map, which I can use to add visual layers
+  map.addSource('china-town', {
+    type: 'geojson',
+    data: './data/china-town.geojson',
+  });
