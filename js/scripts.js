@@ -133,6 +133,22 @@ map.on('style.load', function() {
     data: './data/china-town.geojson',
   });
 
+  map.addSource('lenox-Hill', {
+    type: 'geojson',
+    data: './data/lenox-Hill.geojson',
+  });
+
+  map.addSource('upper-east-side', {
+    type: 'geojson',
+    data: './data/upper-east-side.geojson',
+  });
+
+  map.addSource('east-harlem', {
+    type: 'geojson',
+    data: './data/east-harlem.geojson',
+  });
+
+
   // add a custom-styled layer for tax lots
  map.addLayer({
    id: 'china-town-lots-fill',
@@ -246,6 +262,7 @@ map.on('style.load', function() {
 
      // use jquery to display the address and land use description to the sidebar
      $('#address').text(lot.properties.address);
+     $('#bldgclass').text(lot.properties.bldgclass);
      $('#landuse').text(landuseDescription);
 
      // set this lot's polygon feature as the data for the highlight source
