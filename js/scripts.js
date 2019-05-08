@@ -1,5 +1,6 @@
+
 // sets up my mapbox access token so they can track my usage of their basemap services
-mapboxgl.accessToken = 'pk.eyJ1IjoiemFtMjc4IiwiYSI6ImNqdWQ5YWpneDBzbGQ0ZW5xOGtzcDJ0OGcifQ.PqU5et-zFUgXyhIeGuueqg';
+mapboxgl.accessToken = 'pk.eyJ1IjoiY3dob25nIiwiYSI6IjAyYzIwYTJjYTVhMzUxZTVkMzdmYTQ2YzBmMTM0ZDAyIn0.owNd_Qa7Sw2neNJbK6zc1A';
 
 // instantiate the map
 var map = new mapboxgl.Map({
