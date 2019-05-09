@@ -209,11 +209,289 @@ map.on('style.load', function() {
    }
  }, 'waterway-label')
 
+ // add a custom-styled layer for tax lots
+map.addLayer({
+  id: 'lenox-Hill-lots-fill',
+  type: 'fill',
+  source: 'lenox-Hill',
+  paint: {
+    'fill-opacity': 0.7,
+    'fill-color': {
+      type: 'categorical',
+      property: 'landuse',
+      stops: [
+          [
+            '01',
+            LandUseLookup(1).color,
+          ],
+          [
+            "02",
+            LandUseLookup(2).color,
+          ],
+          [
+            "03",
+            LandUseLookup(3).color,
+          ],
+          [
+            "04",
+            LandUseLookup(4).color,
+          ],
+          [
+            "05",
+            LandUseLookup(5).color,
+          ],
+          [
+            "06",
+            LandUseLookup(6).color,
+          ],
+          [
+            "07",
+            LandUseLookup(7).color,
+          ],
+          [
+            "08",
+            LandUseLookup(8).color,
+          ],
+          [
+            "09",
+            LandUseLookup(9).color,
+          ],
+          [
+            "10",
+            LandUseLookup(10).color,
+          ],
+          [
+            "11",
+            LandUseLookup(11).color,
+          ],
+        ]
+      }
+  }
+}, 'waterway-label')
+
+// add a custom-styled layer for tax lots
+map.addLayer({
+ id: 'upper-east-side-lots-fill',
+ type: 'fill',
+ source: 'upper-east-side',
+ paint: {
+   'fill-opacity': 0.7,
+   'fill-color': {
+     type: 'categorical',
+     property: 'landuse',
+     stops: [
+         [
+           '01',
+           LandUseLookup(1).color,
+         ],
+         [
+           "02",
+           LandUseLookup(2).color,
+         ],
+         [
+           "03",
+           LandUseLookup(3).color,
+         ],
+         [
+           "04",
+           LandUseLookup(4).color,
+         ],
+         [
+           "05",
+           LandUseLookup(5).color,
+         ],
+         [
+           "06",
+           LandUseLookup(6).color,
+         ],
+         [
+           "07",
+           LandUseLookup(7).color,
+         ],
+         [
+           "08",
+           LandUseLookup(8).color,
+         ],
+         [
+           "09",
+           LandUseLookup(9).color,
+         ],
+         [
+           "10",
+           LandUseLookup(10).color,
+         ],
+         [
+           "11",
+           LandUseLookup(11).color,
+         ],
+       ]
+     }
+ }
+}, 'waterway-label')
+
+// add a custom-styled layer for tax lots
+map.addLayer({
+ id: 'east-harlem-lots-fill',
+ type: 'fill',
+ source: 'east-harlem',
+ paint: {
+   'fill-opacity': 0.7,
+   'fill-color': {
+     type: 'categorical',
+     property: 'landuse',
+     stops: [
+         [
+           '01',
+           LandUseLookup(1).color,
+         ],
+         [
+           "02",
+           LandUseLookup(2).color,
+         ],
+         [
+           "03",
+           LandUseLookup(3).color,
+         ],
+         [
+           "04",
+           LandUseLookup(4).color,
+         ],
+         [
+           "05",
+           LandUseLookup(5).color,
+         ],
+         [
+           "06",
+           LandUseLookup(6).color,
+         ],
+         [
+           "07",
+           LandUseLookup(7).color,
+         ],
+         [
+           "08",
+           LandUseLookup(8).color,
+         ],
+         [
+           "09",
+           LandUseLookup(9).color,
+         ],
+         [
+           "10",
+           LandUseLookup(10).color,
+         ],
+         [
+           "11",
+           LandUseLookup(11).color,
+         ],
+       ]
+     }
+ }
+}, 'waterway-label')
+
+// add a custom-styled layer for tax lots
+map.addLayer({
+ id: 'china-town-lots-fill',
+ type: 'fill',
+ source: 'china-town',
+ paint: {
+   'fill-opacity': 0.7,
+   'fill-color': {
+     type: 'categorical',
+     property: 'landuse',
+     stops: [
+         [
+           '01',
+           LandUseLookup(1).color,
+         ],
+         [
+           "02",
+           LandUseLookup(2).color,
+         ],
+         [
+           "03",
+           LandUseLookup(3).color,
+         ],
+         [
+           "04",
+           LandUseLookup(4).color,
+         ],
+         [
+           "05",
+           LandUseLookup(5).color,
+         ],
+         [
+           "06",
+           LandUseLookup(6).color,
+         ],
+         [
+           "07",
+           LandUseLookup(7).color,
+         ],
+         [
+           "08",
+           LandUseLookup(8).color,
+         ],
+         [
+           "09",
+           LandUseLookup(9).color,
+         ],
+         [
+           "10",
+           LandUseLookup(10).color,
+         ],
+         [
+           "11",
+           LandUseLookup(11).color,
+         ],
+       ]
+     }
+ }
+}, 'waterway-label')
  // add an outline to the tax lots which is only visible after zoom level 14.8
  map.addLayer({
    id: 'china-town-lots-line',
    type: 'line',
    source: 'china-town',
+   paint: {
+     'line-opacity': 0.7,
+     'line-color': 'gray',
+     'line-opacity': {
+       stops: [[14, 0], [14.8, 1]], // zoom-dependent opacity, the lines will fade in between zoom level 14 and 14.8
+     }
+   }
+ });
+
+ map.addLayer({
+   id: 'east-harlem-lots-line',
+   type: 'line',
+   source: 'east-harlem',
+   paint: {
+     'line-opacity': 0.7,
+     'line-color': 'gray',
+     'line-opacity': {
+       stops: [[14, 0], [14.8, 1]], // zoom-dependent opacity, the lines will fade in between zoom level 14 and 14.8
+     }
+   }
+ });
+
+ map.addLayer({
+   id: 'lenox-Hill-lots-line',
+   type: 'line',
+   source: 'lenox-Hill',
+   paint: {
+     'line-opacity': 0.7,
+     'line-color': 'gray',
+     'line-opacity': {
+       stops: [[14, 0], [14.8, 1]], // zoom-dependent opacity, the lines will fade in between zoom level 14 and 14.8
+     }
+   }
+ });
+
+ map.addLayer({
+   id: 'upper-east-side-lots-line',
+   type: 'line',
+   source: 'pper-east-side',
    paint: {
      'line-opacity': 0.7,
      'line-color': 'gray',
@@ -247,6 +525,18 @@ map.on('style.load', function() {
  // when the mouse moves, do stuff!
  map.on('mousemove', function (e) {
    // query for the features under the mouse, but only in the lots layer
+   var features = map.queryRenderedFeatures(e.point, {
+       layers: ['east-harlem-lots-fill'],
+   });
+
+   var features = map.queryRenderedFeatures(e.point, {
+       layers: ['lenox-Hill-lots-fill'],
+   });
+
+   var features = map.queryRenderedFeatures(e.point, {
+       layers: ['upper-east-side-lots-fill'],
+   });
+
    var features = map.queryRenderedFeatures(e.point, {
        layers: ['china-town-lots-fill'],
    });
