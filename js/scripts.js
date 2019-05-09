@@ -244,6 +244,7 @@ map.on('style.load', function() {
 
      // lookup the corresponding description for the land use code
      var landuseDescription = LandUseLookup(parseInt(lot.properties.landuse)).description;
+     var bldgclassDescription = LandUseLookup(parseInt(lot.properties.bldgclass)).description;
 
      // use jquery to display the address and land use description to the sidebar
      $('#address').text(lot.properties.address);
