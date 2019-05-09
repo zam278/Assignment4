@@ -263,6 +263,7 @@ map.on('style.load', function() {
      // use jquery to display the address and land use description to the sidebar
      $('#address').text(lot.properties.address);
      $('#bldgclass').text(lot.properties.bldgclass);
+     $('#yearbuilt').text(lot.properties.yearbuilt);
      $('#landuse').text(landuseDescription);
 
      // set this lot's polygon feature as the data for the highlight source
