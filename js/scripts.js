@@ -104,7 +104,7 @@ var neighborHoodLookup = {
   'china-town': [-74.003660, 40.713034],
   'lenox-Hill': [-73.9732269, 40.7682908],
   'upper-east-side': [-73.9666769, 40.7682912],
-  'east-harlem': [-73.939726,40.797356],
+  'east-harlem': [-73.938843, 40.805212],
 }
 
 // we can't add our own sources and layers until the base style is finished loading
@@ -254,8 +254,10 @@ map.on('style.load', function() {
    // get the first feature from the array of returned features.
    var lot = features[0]
 
-  console.log() if (lot) {  // if there's a lot under the mouse, do stuff
-     map.getCanvas().style.cursor = 'pointer';  // make the cursor a pointer
+   if (lot) {  // if there's a lot under the mouse, do stuff
+   console.log(
+     map.getCanvas().style.cursor = 'pointer';
+   ); // make the cursor a pointer
 
      // lookup the corresponding description for the land use code
      var landuseDescription = LandUseLookup(parseInt(lot.properties.landuse)).description;
@@ -266,7 +268,6 @@ map.on('style.load', function() {
      $('#numfloors').text(lot.properties.numfloors);
      $('#yearbuilt').text(lot.properties.yearbuilt);
      $('#landuse').text(landuseDescription);
-
 
      // set this lot's polygon feature as the data for the highlight source
      map.getSource('highlight-feature').setData(lot.geometry);
