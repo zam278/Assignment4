@@ -206,44 +206,6 @@ map.on('style.load', function() {
    }
  });
 
- map.addLayer({
-   id: 'east-harlem-lots-line',
-   type: 'line',
-   source: 'east-harlem',
-   paint: {
-     'line-opacity': 0.7,
-     'line-color': 'gray',
-     'line-opacity': {
-       stops: [[14, 0], [14.8, 1]], // zoom-dependent opacity, the lines will fade in between zoom level 14 and 14.8
-     }
-   }
- });
-
- map.addLayer({
-   id: 'lenox-Hill-lots-line',
-   type: 'line',
-   source: 'lenox-Hill',
-   paint: {
-     'line-opacity': 0.7,
-     'line-color': 'gray',
-     'line-opacity': {
-       stops: [[14, 0], [14.8, 1]], // zoom-dependent opacity, the lines will fade in between zoom level 14 and 14.8
-     }
-   }
- });
-
- map.addLayer({
-   id: 'upper-east-side-lots-line',
-   type: 'line',
-   source: 'china-town',
-   paint: {
-     'line-opacity': 0.7,
-     'line-color': 'gray',
-     'line-opacity': {
-       stops: [[14, 0], [14.8, 1]], // zoom-dependent opacity, the lines will fade in between zoom level 14 and 14.8
-     }
-   }
- });
 
  // add an empty data source, which we will use to highlight the lot the user is hovering over
  map.addSource('highlight-feature', {
@@ -271,18 +233,6 @@ map.on('style.load', function() {
    // query for the features under the mouse, but only in the lots layer
    var features = map.queryRenderedFeatures(e.point, {
        layers: ['east-harlem-lots-fill'],
-   });
-
-   var features = map.queryRenderedFeatures(e.point, {
-       layers: ['lenox-Hill-lots-fill'],
-   });
-
-   var features = map.queryRenderedFeatures(e.point, {
-       layers: ['upper-east-side-lots-fill'],
-   });
-
-   var features = map.queryRenderedFeatures(e.point, {
-       layers: ['china-town-lots-fill'],
    });
 
    // get the first feature from the array of returned features.
