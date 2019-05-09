@@ -255,7 +255,6 @@ map.on('style.load', function() {
    var lot = features[0]
 
    if (lot) {  // if there's a lot under the mouse, do stuff
-   console.log('hello')
      map.getCanvas().style.cursor = 'pointer';
  // make the cursor a pointer
 
@@ -268,7 +267,7 @@ map.on('style.load', function() {
      $('#numfloors').text(lot.properties.numfloors);
      $('#yearbuilt').text(lot.properties.yearbuilt);
      $('#landuse').text(landuseDescription);
-
+   console.log('hello')
      // set this lot's polygon feature as the data for the highlight source
      map.getSource('highlight-feature').setData(lot.geometry);
    } else {
