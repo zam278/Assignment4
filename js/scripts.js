@@ -127,27 +127,10 @@ map.on('style.load', function() {
   map.setPaintProperty('water', 'fill-color', '#a4bee8')
 
   // this sets up the geojson as a source in the map, which I can use to add visual layers
-  // this sets up the geojson as a source in the map, which I can use to add visual layers
   map.addSource('china-town', {
     type: 'geojson',
     data: './data/china-town.geojson',
   });
-
-  map.addSource('lenox-Hill', {
-    type: 'geojson',
-    data: './data/lenox-Hill.geojson',
-  });
-
-  map.addSource('upper-east-side', {
-    type: 'geojson',
-    data: './data/upper-east-side.geojson',
-  });
-
-  map.addSource('east-harlem', {
-    type: 'geojson',
-    data: './data/east-harlem.geojson',
-  });
-
 
   // add a custom-styled layer for tax lots
  map.addLayer({
