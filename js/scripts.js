@@ -390,7 +390,7 @@ map.addLayer({
 }, 'waterway-label')
 
  }
-
+}, 'waterway-label')
  // add an outline to the tax lots which is only visible after zoom level 14.8
  map.addLayer({
    id: 'china-town-lots-line',
@@ -465,65 +465,6 @@ map.addLayer({
    }
  });
 
- map.addSource('highlight-feature', {
-   type: 'geojson',
-   data: {
-     type: 'FeatureCollection',
-     features: []
-   }
- })
-
- // add a layer for the highlighted lot
- map.addLayer({
-   id: 'highlight-line',
-   type: 'line',
-   source: 'highlight-feature',
-   paint: {
-     'line-width': 3,
-     'line-opacity': 0.9,
-     'line-color': 'black',
-   }
- });
-
- map.addSource('highlight-feature', {
-   type: 'geojson',
-   data: {
-     type: 'FeatureCollection',
-     features: []
-   }
- })
-
- // add a layer for the highlighted lot
- map.addLayer({
-   id: 'highlight-line',
-   type: 'line',
-   source: 'highlight-feature',
-   paint: {
-     'line-width': 3,
-     'line-opacity': 0.9,
-     'line-color': 'black',
-   }
- });
-
- map.addSource('highlight-feature', {
-   type: 'geojson',
-   data: {
-     type: 'FeatureCollection',
-     features: []
-   }
- })
-
- // add a layer for the highlighted lot
- map.addLayer({
-   id: 'highlight-line',
-   type: 'line',
-   source: 'highlight-feature',
-   paint: {
-     'line-width': 3,
-     'line-opacity': 0.9,
-     'line-color': 'black',
-   }
- });
  // when the mouse moves, do stuff!
  map.on('mousemove', function (e) {
    // query for the features under the mouse, but only in the lots layer
