@@ -255,7 +255,7 @@ map.on('style.load', function() {
    var lot = features[0]
 
    if (lot) {  // if there's a lot under the mouse, do stuff
-   
+   console.log('hello')
      map.getCanvas().style.cursor = 'pointer';
  // make the cursor a pointer
 
