@@ -255,9 +255,9 @@ map.on('style.load', function() {
    var lot = features[0]
 
    if (lot) {  // if there's a lot under the mouse, do stuff
-   console.log(
+   
      map.getCanvas().style.cursor = 'pointer';
-   ); // make the cursor a pointer
+ // make the cursor a pointer
 
      // lookup the corresponding description for the land use code
      var landuseDescription = LandUseLookup(parseInt(lot.properties.landuse)).description;
