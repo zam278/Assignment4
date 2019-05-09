@@ -232,7 +232,7 @@ map.on('style.load', function() {
  map.on('mousemove', function (e) {
    // query for the features under the mouse, but only in the lots layer
    var features = map.queryRenderedFeatures(e.point, {
-       layers: ['east-harlem-lots-fill'],
+       layers: ['china-town-lots-fill'],
    });
 
    // get the first feature from the array of returned features.
