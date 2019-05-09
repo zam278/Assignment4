@@ -104,7 +104,7 @@ var neighborHoodLookup = {
   'china-town': [-74.003660, 40.713034],
   'lenox-Hill': [-73.9732269, 40.7682908],
   'upper-east-side': [-73.9666769, 40.7682912],
-  'east-harlem': [-73.938843, 40.805212],
+  'east-harlem': [-73.939726,40.797356],
 }
 
 // we can't add our own sources and layers until the base style is finished loading
