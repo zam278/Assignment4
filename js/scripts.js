@@ -389,65 +389,8 @@ map.addLayer({
  }
 }, 'waterway-label')
 
-// add a custom-styled layer for tax lots
-map.addLayer({
- id: 'china-town-lots-fill',
- type: 'fill',
- source: 'china-town',
- paint: {
-   'fill-opacity': 0.7,
-   'fill-color': {
-     type: 'categorical',
-     property: 'landuse',
-     stops: [
-         [
-           '01',
-           LandUseLookup(1).color,
-         ],
-         [
-           "02",
-           LandUseLookup(2).color,
-         ],
-         [
-           "03",
-           LandUseLookup(3).color,
-         ],
-         [
-           "04",
-           LandUseLookup(4).color,
-         ],
-         [
-           "05",
-           LandUseLookup(5).color,
-         ],
-         [
-           "06",
-           LandUseLookup(6).color,
-         ],
-         [
-           "07",
-           LandUseLookup(7).color,
-         ],
-         [
-           "08",
-           LandUseLookup(8).color,
-         ],
-         [
-           "09",
-           LandUseLookup(9).color,
-         ],
-         [
-           "10",
-           LandUseLookup(10).color,
-         ],
-         [
-           "11",
-           LandUseLookup(11).color,
-         ],
-       ]
-     }
  }
-}, 'waterway-label')
+
  // add an outline to the tax lots which is only visible after zoom level 14.8
  map.addLayer({
    id: 'china-town-lots-line',
@@ -522,6 +465,65 @@ map.addLayer({
    }
  });
 
+ map.addSource('highlight-feature', {
+   type: 'geojson',
+   data: {
+     type: 'FeatureCollection',
+     features: []
+   }
+ })
+
+ // add a layer for the highlighted lot
+ map.addLayer({
+   id: 'highlight-line',
+   type: 'line',
+   source: 'highlight-feature',
+   paint: {
+     'line-width': 3,
+     'line-opacity': 0.9,
+     'line-color': 'black',
+   }
+ });
+
+ map.addSource('highlight-feature', {
+   type: 'geojson',
+   data: {
+     type: 'FeatureCollection',
+     features: []
+   }
+ })
+
+ // add a layer for the highlighted lot
+ map.addLayer({
+   id: 'highlight-line',
+   type: 'line',
+   source: 'highlight-feature',
+   paint: {
+     'line-width': 3,
+     'line-opacity': 0.9,
+     'line-color': 'black',
+   }
+ });
+
+ map.addSource('highlight-feature', {
+   type: 'geojson',
+   data: {
+     type: 'FeatureCollection',
+     features: []
+   }
+ })
+
+ // add a layer for the highlighted lot
+ map.addLayer({
+   id: 'highlight-line',
+   type: 'line',
+   source: 'highlight-feature',
+   paint: {
+     'line-width': 3,
+     'line-opacity': 0.9,
+     'line-color': 'black',
+   }
+ });
  // when the mouse moves, do stuff!
  map.on('mousemove', function (e) {
    // query for the features under the mouse, but only in the lots layer
