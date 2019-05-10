@@ -325,7 +325,6 @@ map.on('style.load', function() {
    // get the first feature from the array of returned features.
    var lot = features[0]
 
-   console.log(lot);
 
    if (lot) {  // if there's a lot under the mouse, do stuff
      map.getCanvas().style.cursor = 'pointer';
