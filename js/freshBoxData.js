@@ -48,4 +48,3 @@ var freshBox =[
    "lat": 40.7134948
  }
 ]
-dfgf
