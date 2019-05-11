@@ -44,7 +44,7 @@ var freshBox =[
    "day": "Thursday",
    "hours": "2pm-6pm",
    "coordinator": "Elena Tinschert",
-   "lng": -74.0059089,
-   "lat": 40.7128346
+   "lng": -74.0090892,
+   "lat": 40.7134948
  }
 ]
