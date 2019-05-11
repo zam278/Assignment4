@@ -69,16 +69,16 @@ map.addControl(new mapboxgl.NavigationControl());
 // //<=========!!============>//
 
 //to create a loop for the marker; every for loop it has to start and end with {}
-freshBox.forEach(function(freshBoxdata) {
+freshBox.forEach(function(freshBoxData) {
 // to add a marker for each feature
   new mapboxgl.Marker({
     color: 'blue',
   })
-    .setLngLat([freshBoxdata.lng, freshBoxdata.lat])
+    .setLngLat([freshBoxData.lng, freshBoxData.lat])
     .setPopup(new mapboxgl.Popup({ offset: 40 })
-      .setHTML('<h4>' + freshBoxdata.site_name +'</h4><p>' + "Day: " + freshBoxdata.day + '</p><p>'+ "Operating hours: " +
-        freshBoxdata.hours + '</p><p>' + "Coordinator: " +
-        freshBoxdata.coordinator + '</p>' ))
+      .setHTML('<h4>' + freshBoxData.site_name +'</h4><p>' + "Day: " + freshBoxData.day + '</p><p>'+ "Operating hours: " +
+        freshBoxData.hours + '</p><p>' + "Coordinator: " +
+        freshBoxData.coordinator + '</p>' ))
     .addTo(map);
 
 
