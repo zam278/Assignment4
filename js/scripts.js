@@ -10,6 +10,7 @@ var map = new mapboxgl.Map({
 });
 
 
+
 // Add zoom and rotation controls to the map.
 map.addControl(new mapboxgl.NavigationControl());
 //<=========!!============>//
@@ -69,16 +70,16 @@ map.addControl(new mapboxgl.NavigationControl());
 // //<=========!!============>//
 
 //to create a loop for the marker; every for loop it has to start and end with {}
-freshBox.forEach(function(freshBoxData) {
+freshBox.forEach(function(freshBoxdata) {
 // to add a marker for each feature
   new mapboxgl.Marker({
     color: 'blue',
   })
-    .setLngLat([freshBoxData.lng, freshBoxData.lat])
+    .setLngLat([freshBoxdata.lng, freshBoxdata.lat])
     .setPopup(new mapboxgl.Popup({ offset: 40 })
-      .setHTML('<h4>' + freshBoxData.site_name +'</h4><p>' + "Day: " + freshBoxData.day + '</p><p>'+ "Operating hours: " +
-        freshBoxData.hours + '</p><p>' + "Coordinator: " +
-        freshBoxData.coordinator + '</p>' ))
+      .setHTML('<h4>' + freshBoxdata.site_name +'</h4><p>' + "Day: " + freshBoxdata.day + '</p><p>'+ "Operating hours: " +
+        freshBoxdata.hours + '</p><p>' + "Coordinator: " +
+        freshBoxdata.coordinator + '</p>' ))
     .addTo(map);
 
 
@@ -243,7 +244,7 @@ var neighborHoodLookup = {
   'china-town': [-74.003660, 40.713034],
   'lenox-Hill': [-73.9732269, 40.7682908],
   'upper-east-side': [-73.9666769, 40.7682912],
-  'east-harlem': [-73.942988,40.794140],
+  'east-harlem': [-73.942430,40.797908],
 }
 
 // we can't add our own sources and layers until the base style is finished loading
